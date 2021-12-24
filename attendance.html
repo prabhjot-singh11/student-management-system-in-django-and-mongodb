@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/attendance" method="POST">
+        {%csrf_token%}
+       <table>
+           <thead>
+               <tr>
+                   <th>Sr.no</th>
+                   <th>name</th>
+               </tr>
+           </thead>
+           <tbody>
+            {{%for x in att%}}
+               <tr>
+                   
+                   <td>{{forloop.counter}}</td>
+                   <td>{{x.name}}</td>
+                   
+               </tr>
+              {{%endfor%}}
+           </tbody>
+       </table>
+
+
+        <label for="attendance"></label>
+        <input type="checkbox" name="attendance" id="attendance">
+        <input type="submit" id="submit" name="submit" value="Save">
+    </form>
+    
+</body>
+</html>

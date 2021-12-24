@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: skyblue;
+  font-family: "lato", sans-serif;
+}
+        .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+        
+        .submitBtn {
+  display: inline-block;
+  margin: auto;
+            
+            
+  padding: 15px 30px;
+  border: none;
+  background-color: purple;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+}
+        #btn1{
+            background-color: blue;
+        }
+        .title {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+        .form {     
+  background-color: white;
+  width: 400px;
+  border-radius: 8px;
+  padding: 10px 40px;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+}
+
+
+    
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="form">
+            
+		<h1 class="title">Student Menu</h1>
+	
+			
+			
+		
+
+        <a href="/add_student"> <input type="submit" class="submitBtn" value="Add new student data"></a>
+        <br>
+        <a href="/student_data"> <input type="submit" class="submitBtn" value="Display student data"></a>
+        <br>
+        <a href="/ex"> <input type="submit" class="submitBtn" value="Delete and Update Student Data"></a>
+       <a href="/search"> <input type="submit" class="submitBtn" value="search the student"></a>
+        <br>
+         <a href="/signout"> <input type="submit" class="submitBtn" id="btn1" value="Signout"></a>
+        </div></div>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            background-color: rgb(70, 67, 67);
+            color:rgb(245, 237, 237);
+            font-family: sans-serif;
+        }
+        
+      
+        body {
+            width: auto;
+            max-width: 1000px;
+            min-width: 480px;
+            margin: 0 auto;
+            }
+        h1{
+            text-align: center;
+        }
+        table, th, td 
+        {
+            border:1px solid black;
+            border-collapse: collapse;
+           
+        }
+        .styled-table 
+        {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        .styled-table thead tr 
+        {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        .styled-table th,
+        .styled-table td 
+        {
+            padding: 12px 15px;
+        }
+        .styled-table tbody tr 
+        {
+            border-bottom: 1px solid #dddddd;
+            background-color: #f3f3f3;
+            color: black;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+        </style>
+        
+</head>
+<body>
+    <h1>STUDENT'S INFORMATION</h1>
+    <table class="styled-table" style="width:70%">
+        <thead>
+        <tr>
+            <th>Sr No.</th>
+          <th>STUDENT ID</th>
+          <th>FIRST NAME</th>
+          <th>LAST NAME</th>
+          <th>DATE OF BIRTH</th>
+          <th>GENDER</th>
+          <th>CONTACT</th>
+          <th>EMAIL</th>
+          <th>COURSE</th>
+          <th>ADDRESS</th>
+        </tr></thead>
+{% for std in studentinfo%}
+  
+ <tbody>
+    <tr>
+       <td>{{forloop.counter}}
+      <td>{{std.Roll_no}}</td>
+
+    
+      <td>{{std.first_name}}</td>
+      <td>{{std.last_name}}</td>
+      <td>{{std.dob}}</td>
+      <td>{{std.gender}}</td>
+      <td>{{std.contect}}</td>
+      <td>{{std.email}}</td>
+      <td>{{std.course}}</td>
+      <td>{{std.address}}</td>
+
+     </tr></tbody>
+
+  {%endfor%}
+</table> 
+
+
+</body>
+</html>

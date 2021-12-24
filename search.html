@@ -1,0 +1,135 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+    body, html
+        {
+              height: 100%;
+              padding: 0;
+              margin: 0;
+              font-family: 'Sniglet';
+            background-color: cadetblue;
+        }
+        h1
+        {
+              font-weight: normal;
+              font-size: 4em;
+              font-family: 'Raleway', sans-serif;
+              margin: 0 auto;
+              margin-top: 30px;
+              width: 800px;
+              color: black;
+              text-align: center;
+        }
+        h3{
+               text-align: left;
+           }
+        form
+        {
+          margin: 0 auto;
+          width: 500px;
+          padding-top: 30px;
+          color: white;
+          position: relative;
+        }
+        header
+        {
+          height: 80px;
+          
+        }
+        label, input
+        {
+            display: block; 
+        }
+        input{
+  width: 400px; 
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 10px;
+  font-family: 'Sniglet', cursive;
+  font-size: 1em;
+  color: #676767;
+  transition: border 0.5s;
+  -webkit-transition: border 0.5s;
+  -moz-transition: border 0.5s;
+  -o-transition: border 0.5s;
+  border: solid 3px #98d4f3;  
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+        
+input:focus{
+  border: solid 3px #77bde0;  
+}
+        
+label{
+  font-size: 1.5em;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+        #submit{
+  background-color: green;
+    display: inline-block;       
+  color: white;
+  height: 50px;
+width: 200px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1.29em;
+  
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+        button{
+            border-radius: 2em;
+            text-align: center;
+        }
+        </style>
+</head>
+<body>
+    <div id="form">
+    <form action="/search" method="POST">
+        <h1><strong>Search Student Data</strong></h1>
+        <h3>Teacher Login</h3>
+     {% csrf_token %} 
+        
+        <div class="formgroup" id="search-form">
+   <label for="">Search by Roll no</label>
+   <input type="text " id="search" name="search" placeholder="enter the roll number" required>
+        </div>
+
+<br>
+<button id="submit">search</button>
+<br>
+
+    
+        {%for vanu in vanue%}
+  
+        NAME ---  {{vanu}}-  {{vanu.first_name}}
+          <br>
+         LAST NAME -- {{vanu.last_name}} 
+          <br>
+        COURSE --  {{vanu.course}}
+         <br>
+        DATE OF BIRTH -- {{vanu.dob}}
+         <br>
+        ADDRESS --{{vanu.address}}
+  
+          {%endfor%}
+             
+  
+  
+  </form>
+      </div>
+  </body>
+  </html>

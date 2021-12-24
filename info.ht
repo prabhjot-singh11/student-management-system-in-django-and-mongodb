@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+        
+</head>
+<body>
+    <h1>all students information</h1>
+    <table style="width:70%">
+        <tr>
+          <th>STUDENT ID</th>
+          <th>FIRST NAME</th>
+          <th>LAST NAME</th>
+          <th>DATE OF BIRTH</th>
+          <th>GENDER</th>
+          <th>CONTACT</th>
+          <th>EMAIL</th>
+          <th>COURSE</th>
+          <th>ADDRESS</th>
+        </tr>
+{% for std in studentinfo%}
+  
+ 
+    <tr>
+      <td>{{std.Roll_no}}</td>
+
+    
+      <td>{{std.first_name}}</td>
+      <td>{{std.last_name}}</td>
+      <td>{{std.dob}}</td>
+      <td>{{std.gender}}</td>
+      <td>{{std.contect}}</td>
+      <td>{{std.email}}</td>
+      <td>{{std.course}}</td>
+      <td>{{std.address}}</td>
+
+    </tr>
+
+  {%endfor%}
+</table> 
+
+
+</body>
+</html>
